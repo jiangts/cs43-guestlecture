@@ -8,11 +8,17 @@
  [[reagent "0.9.1"]
   [re-frame "0.10.8"]
   [cljs-bean "1.5.0"]
-  [better-cond "2.1.0"]]
+  [better-cond "2.1.0"]
+  [binaryage/devtools "0.9.10"]
+  [cider/cider-nrepl "0.18.0"]]
+
+ :nrepl        {:port 3333}
 
  :builds
  {:app
   {:target     :browser
    :modules    {:base {:entries [demo.core]}}
    :output-dir "public/js/compiled"
-   :asset-path "/js/compiled"}}}
+   :asset-path "/js/compiled"
+   :devtools   {:http-root   "public"
+                :http-port   3000}}}}

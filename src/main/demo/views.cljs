@@ -4,6 +4,15 @@
             [better-cond.core :as b]))
 
 
+(defn char-range [start end]
+  (map js/String.fromCharCode (range (.charCodeAt start) (inc (.charCodeAt end)))))
+
+(def squares
+  (for [i (char-range "a" "h")
+        j (range 1 9)]
+    (keyword (str i j))))
+
+
 (defn board-inner [props]
   (let [state (r/atom nil)
         id (str (gensym "board"))]
