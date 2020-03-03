@@ -1,0 +1,25 @@
+{
+  "name": "cs43-guestlecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangts/cs43-guestlecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangts/cs43-guestlecture/issues"
+  },
+  "homepage": "https://github.com/jiangts/cs43-guestlecture#readme"
+}
