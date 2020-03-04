@@ -1,8 +1,12 @@
 (ns demo.views
   (:require [reagent.core :as r]
             [cljs-bean.core :refer (bean ->clj ->js)]
+            ["antd" :as antd]
+            ["showdown" :as showdown]
+            [demo.life :as life]
             [better-cond.core :as b]))
 
+;; chess
 
 (defn char-range [start end]
   (map js/String.fromCharCode (range (.charCodeAt start) (inc (.charCodeAt end)))))
@@ -28,6 +32,26 @@
        :display-name "board-inner"})))
 
 
+
+;; slides
+
+(defn markdown [text]
+  (let [converter (showdown/Converter.)]
+    [:span {"dangerouslySetInnerHTML"
+            #js {:__html (.makeHtml converter text)}}]))
+
+(defn slide [{:keys [title md]} & children]
+  (into
+    [:> antd/Card {:title title}
+     (when md [markdown md])]
+    children))
+
+
 (defn app-root []
-  [board-inner {:style {:width 400}}])
+  #_[board-inner {:style {:width 400}}]
+  [:div {:style {:padding "1em"}}
+   [slide {:title "Hello World"
+           :md "- this is some markdown text"}]
+   [slide {:title "game of life"}
+    [life/view]]])
 

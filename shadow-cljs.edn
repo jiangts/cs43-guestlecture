@@ -21,4 +21,4 @@
    :output-dir "public/js/compiled"
    :asset-path "/js/compiled"
    :devtools   {:http-root   "public"
-                :http-port   3000}}}}
+                :http-port   3020}}}}
